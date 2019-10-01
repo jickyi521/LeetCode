@@ -20,3 +20,14 @@ def guangdutraverse2(root)
        queue.push(node.leftNode)
      if node.rightNode:
        queue.push(node.rightNode)
+
+def guangDuTraverse3(root)
+    queue = Queue()
+    queue.push(root)
+    while queue.isNotEmpty:
+      node = queue.pop()
+      print(node.val)
+      if node.leftNode:
+        queue.push(node.leftNode)
+      if node.rightNode:
+        queue.push(node.rightNode)
