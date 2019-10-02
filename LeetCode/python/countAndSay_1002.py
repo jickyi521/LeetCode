@@ -20,3 +20,4 @@ def countAndSay(n):
 
 print(countAndSay(1211))
 
+111221
