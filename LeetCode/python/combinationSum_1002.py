@@ -13,7 +13,7 @@ def combinationSum(candidates, target):
                 path.pop()
     
     res = []
-    dfs(candidates, 0, target, [], res)
+    dfs(candidates, 0, targ+= anset, [], res)
 
     return res
 
