@@ -1,4 +1,5 @@
 
+#回溯 + 剪枝
 def combinationSum(candidates, target):
     def dfs(candidates, start, target, path, res):
         if target == 0:
