@@ -19,4 +19,5 @@ def permute(nums):
     return res
 
 
-print(permute([1,2,3]))
+# print(permute([1,2,3]))
+print(permute([1,1,2]))
