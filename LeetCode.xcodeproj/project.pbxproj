@@ -13,6 +13,19 @@
 		06D40E5C2315781B008177F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D40E5B2315781B008177F2 /* Assets.xcassets */; };
 		06D40E5F2315781B008177F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D40E5E2315781B008177F2 /* Preview Assets.xcassets */; };
 		06D40E622315781B008177F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D40E602315781B008177F2 /* LaunchScreen.storyboard */; };
+		9B9981E42339F7D000EC4DAD /* longestCommonPrefix_0914.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981D62339F7D000EC4DAD /* longestCommonPrefix_0914.py */; };
+		9B9981E52339F7D000EC4DAD /* maxdepth_0908.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981D72339F7D000EC4DAD /* maxdepth_0908.py */; };
+		9B9981E62339F7D000EC4DAD /* reverse_0911.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981D82339F7D000EC4DAD /* reverse_0911.py */; };
+		9B9981E72339F7D000EC4DAD /* guangduTraverse.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981D92339F7D000EC4DAD /* guangduTraverse.py */; };
+		9B9981E82339F7D000EC4DAD /* maopaosort_0902 in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DA2339F7D000EC4DAD /* maopaosort_0902 */; };
+		9B9981E92339F7D000EC4DAD /* middletraverse_0904.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DB2339F7D000EC4DAD /* middletraverse_0904.py */; };
+		9B9981EA2339F7D000EC4DAD /* deepTraverse_0906.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DC2339F7D000EC4DAD /* deepTraverse_0906.py */; };
+		9B9981EB2339F7D000EC4DAD /* isPalindrome_0909.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DD2339F7D000EC4DAD /* isPalindrome_0909.py */; };
+		9B9981EC2339F7D000EC4DAD /* maopaosort_0902.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DE2339F7D000EC4DAD /* maopaosort_0902.py */; };
+		9B9981ED2339F7D000EC4DAD /* twosum_0901.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981DF2339F7D000EC4DAD /* twosum_0901.py */; };
+		9B9981EE2339F7D000EC4DAD /* launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981E12339F7D000EC4DAD /* launch.json */; };
+		9B9981EF2339F7D000EC4DAD /* mergeTwoLists_0903.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981E22339F7D000EC4DAD /* mergeTwoLists_0903.py */; };
+		9B9981F02339F7D000EC4DAD /* quicksort_0905.py in Resources */ = {isa = PBXBuildFile; fileRef = 9B9981E32339F7D000EC4DAD /* quicksort_0905.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +37,19 @@
 		06D40E5E2315781B008177F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		06D40E612315781B008177F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06D40E632315781B008177F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B9981D62339F7D000EC4DAD /* longestCommonPrefix_0914.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = longestCommonPrefix_0914.py; sourceTree = "<group>"; };
+		9B9981D72339F7D000EC4DAD /* maxdepth_0908.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = maxdepth_0908.py; sourceTree = "<group>"; };
+		9B9981D82339F7D000EC4DAD /* reverse_0911.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = reverse_0911.py; sourceTree = "<group>"; };
+		9B9981D92339F7D000EC4DAD /* guangduTraverse.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = guangduTraverse.py; sourceTree = "<group>"; };
+		9B9981DA2339F7D000EC4DAD /* maopaosort_0902 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maopaosort_0902; sourceTree = "<group>"; };
+		9B9981DB2339F7D000EC4DAD /* middletraverse_0904.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = middletraverse_0904.py; sourceTree = "<group>"; };
+		9B9981DC2339F7D000EC4DAD /* deepTraverse_0906.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = deepTraverse_0906.py; sourceTree = "<group>"; };
+		9B9981DD2339F7D000EC4DAD /* isPalindrome_0909.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = isPalindrome_0909.py; sourceTree = "<group>"; };
+		9B9981DE2339F7D000EC4DAD /* maopaosort_0902.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = maopaosort_0902.py; sourceTree = "<group>"; };
+		9B9981DF2339F7D000EC4DAD /* twosum_0901.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = twosum_0901.py; sourceTree = "<group>"; };
+		9B9981E12339F7D000EC4DAD /* launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launch.json; sourceTree = "<group>"; };
+		9B9981E22339F7D000EC4DAD /* mergeTwoLists_0903.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = mergeTwoLists_0903.py; sourceTree = "<group>"; };
+		9B9981E32339F7D000EC4DAD /* quicksort_0905.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = quicksort_0905.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,7 @@
 		06D40E5423157818008177F2 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				9B9981D52339F7D000EC4DAD /* python */,
 				06D40E5523157818008177F2 /* AppDelegate.swift */,
 				06D40E5723157818008177F2 /* SceneDelegate.swift */,
 				06D40E5923157818008177F2 /* ContentView.swift */,
@@ -73,6 +100,34 @@
 				06D40E5E2315781B008177F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B9981D52339F7D000EC4DAD /* python */ = {
+			isa = PBXGroup;
+			children = (
+				9B9981D62339F7D000EC4DAD /* longestCommonPrefix_0914.py */,
+				9B9981D72339F7D000EC4DAD /* maxdepth_0908.py */,
+				9B9981D82339F7D000EC4DAD /* reverse_0911.py */,
+				9B9981D92339F7D000EC4DAD /* guangduTraverse.py */,
+				9B9981DA2339F7D000EC4DAD /* maopaosort_0902 */,
+				9B9981DB2339F7D000EC4DAD /* middletraverse_0904.py */,
+				9B9981DC2339F7D000EC4DAD /* deepTraverse_0906.py */,
+				9B9981DD2339F7D000EC4DAD /* isPalindrome_0909.py */,
+				9B9981DE2339F7D000EC4DAD /* maopaosort_0902.py */,
+				9B9981DF2339F7D000EC4DAD /* twosum_0901.py */,
+				9B9981E02339F7D000EC4DAD /* .vscode */,
+				9B9981E22339F7D000EC4DAD /* mergeTwoLists_0903.py */,
+				9B9981E32339F7D000EC4DAD /* quicksort_0905.py */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		9B9981E02339F7D000EC4DAD /* .vscode */ = {
+			isa = PBXGroup;
+			children = (
+				9B9981E12339F7D000EC4DAD /* launch.json */,
+			);
+			path = .vscode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +188,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9981EE2339F7D000EC4DAD /* launch.json in Resources */,
+				9B9981E62339F7D000EC4DAD /* reverse_0911.py in Resources */,
 				06D40E622315781B008177F2 /* LaunchScreen.storyboard in Resources */,
 				06D40E5F2315781B008177F2 /* Preview Assets.xcassets in Resources */,
+				9B9981E42339F7D000EC4DAD /* longestCommonPrefix_0914.py in Resources */,
+				9B9981EC2339F7D000EC4DAD /* maopaosort_0902.py in Resources */,
+				9B9981E92339F7D000EC4DAD /* middletraverse_0904.py in Resources */,
+				9B9981ED2339F7D000EC4DAD /* twosum_0901.py in Resources */,
+				9B9981E52339F7D000EC4DAD /* maxdepth_0908.py in Resources */,
+				9B9981E72339F7D000EC4DAD /* guangduTraverse.py in Resources */,
+				9B9981F02339F7D000EC4DAD /* quicksort_0905.py in Resources */,
+				9B9981EF2339F7D000EC4DAD /* mergeTwoLists_0903.py in Resources */,
+				9B9981E82339F7D000EC4DAD /* maopaosort_0902 in Resources */,
 				06D40E5C2315781B008177F2 /* Assets.xcassets in Resources */,
+				9B9981EA2339F7D000EC4DAD /* deepTraverse_0906.py in Resources */,
+				9B9981EB2339F7D000EC4DAD /* isPalindrome_0909.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

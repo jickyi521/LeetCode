@@ -22,3 +22,16 @@ def deepTraverse2(root):
       stack.push(node.rightNode)
     if node.leftNode:
       stack.push(node.leftNode)
+
+
+def deeptraverse3(view):
+  stack = Stack()
+  stack.push(root)
+  while stack.isNotEmpty():
+    node = stack.pop()
+    print(node.val)
+    if node.rightNode:
+      stack.push(node.rightNode)
+    if node.leftNode:
+      stack.push(node.leftNode)
+
