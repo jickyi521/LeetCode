@@ -1,3 +1,6 @@
+#字符串相加
+# 1、将两个字符串补齐到同样的长度  2、对位上的字符串进行比较相加，看当前是否有进位要加，是否要进位
+
 def addBinary(a,b):
     diff = abs(len(a)-len(b))
     if len(a) > len(b):
@@ -32,6 +35,6 @@ def addBinary(a,b):
     if carry ==1:
         ret += "1"
     
-    return ret[::-1]
+    return ret[::-1] #ret[::-1] 代表从最后一个到第一个元素复制一遍新数组，即 reversed(ret)
 
 print(addBinary("1010", "1010"))
