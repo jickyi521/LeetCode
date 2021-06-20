@@ -6,6 +6,7 @@ def longestCommonPrefix(strs):
     strs = strs[1:len(strs)]
     print('strs', strs)
     for c in str:
+        print('c', c)
         for temp in strs:
             temp = temp[len(commonStr):len(temp)]
             if len(temp) == 0 or temp[0] != c:
@@ -17,6 +18,6 @@ def longestCommonPrefix(strs):
 # print(longestCommonPrefix(["flower","flow","flight"]))
 # print(longestCommonPrefix(["dog","racecar","car"]))
 # print(longestCommonPrefix([]))
-# print(longestCommonPrefix(["aa","ab"]))
-# print(longestCommonPrefix(["c","acc","ccc"]))
-print(longestCommonPrefix(["aa","a"]))
+print(longestCommonPrefix(["aa","ab"]))
+print(longestCommonPrefix(["c","acc","ccc"]))
+# print(longestCommonPrefix(["aa","a"]))

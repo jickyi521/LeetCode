@@ -1,4 +1,7 @@
 #include <iostream>
+
+#include <vector>
+
 using namespace std;
 
 //[1]两数之和
@@ -69,67 +72,135 @@ bool isPalindrome(int x)
 }
 
 //[13]罗马数字转整数
-int romanToInt(string s) {
+int romanToInt(string s)
+{
     int sum = 0;
     int len = s.length();
-    for (int i = 0; i<len; i++) {
+    for (int i = 0; i < len; i++)
+    {
         char cur = s[i];
-        if (cur == 'I') {
-            if( (i < len - 1)){
-                if( s[i+1] == 'V') {
-                    sum+=4;
+        if (cur == 'I')
+        {
+            if ((i < len - 1))
+            {
+                if (s[i + 1] == 'V')
+                {
+                    sum += 4;
                     i++;
-                } else if( s[i+1] == 'X') {
-                    sum+=9;
+                }
+                else if (s[i + 1] == 'X')
+                {
+                    sum += 9;
                     i++;
-                } else {
+                }
+                else
+                {
                     sum++;
                 }
-            }else{
+            }
+            else
+            {
                 sum++;
             }
-        } else if (cur == 'V'){
-            sum+=5;
-        } else if (cur == 'X') {
-            if( (i < len - 1)){
-                if( s[i+1] == 'L') {
-                    sum+=40;
+        }
+        else if (cur == 'V')
+        {
+            sum += 5;
+        }
+        else if (cur == 'X')
+        {
+            if ((i < len - 1))
+            {
+                if (s[i + 1] == 'L')
+                {
+                    sum += 40;
                     i++;
-                } else if( s[i+1] == 'C') {
-                    sum+=90;
-                    i++;
-                } else {
-                    sum+=10;
                 }
-            }else{
-                sum+=10;
-            }
-        } else if (cur == 'L'){
-            sum+=50;
-        } else if (cur == 'C') {
-            if( (i < len - 1)){
-                if( s[i+1] == 'D') {
-                    sum+=400;
+                else if (s[i + 1] == 'C')
+                {
+                    sum += 90;
                     i++;
-                } else if( s[i+1] == 'M') {
-                    sum+=900;
-                    i++;
-                } else {
-                    sum+=100;
                 }
-            }else{
-                sum+=100;
+                else
+                {
+                    sum += 10;
+                }
             }
-        } else if (cur == 'D'){
-            sum+=500;
-        }  else if (cur == 'M'){
-            sum+=1000;
-        } else {
+            else
+            {
+                sum += 10;
+            }
+        }
+        else if (cur == 'L')
+        {
+            sum += 50;
+        }
+        else if (cur == 'C')
+        {
+            if ((i < len - 1))
+            {
+                if (s[i + 1] == 'D')
+                {
+                    sum += 400;
+                    i++;
+                }
+                else if (s[i + 1] == 'M')
+                {
+                    sum += 900;
+                    i++;
+                }
+                else
+                {
+                    sum += 100;
+                }
+            }
+            else
+            {
+                sum += 100;
+            }
+        }
+        else if (cur == 'D')
+        {
+            sum += 500;
+        }
+        else if (cur == 'M')
+        {
+            sum += 1000;
+        }
+        else
+        {
             //empty
         }
     }
 
     return sum;
+}
+
+//[14]最长公共前缀
+string longestCommonPrefix(vector<string> &strs)
+{
+    int count = strs.size();
+    if (count == 1)
+        return strs[0];
+
+    string cur = strs[0];
+    string commonStr = "", temp = "";
+    for (int i = 0; i < cur.size(); i++)
+    {
+        temp += cur[i];
+        string::size_type idx = string::npos;
+        for (int j = 1; j < count; j++)
+        {
+            idx = strs[j].find(temp);
+            // cout << idx << endl;
+            if (idx != 0)
+            {
+                return commonStr;
+            }
+        }
+        commonStr = temp;
+    }
+    return commonStr;
 }
 
 int main()
@@ -140,9 +211,19 @@ int main()
     // cout << isPalindrome(10) << endl;
 
     //[13]
-    cout << romanToInt("III") << endl;
-    cout << romanToInt("IV") << endl;
-    cout << romanToInt("IX") << endl;
-    cout << romanToInt("LVIII") << endl;
-    cout << romanToInt("MCMXCIV") << endl;
+    // cout << romanToInt("III") << endl;
+    // cout << romanToInt("IV") << endl;
+    // cout << romanToInt("IX") << endl;
+    // cout << romanToInt("LVIII") << endl;
+    // cout << romanToInt("MCMXCIV") << endl;
+
+    //[14]
+    // string arr[1] = {""};
+    // string arr[3] = {"dog", "racecar", "car"};
+    // string arr[3]={"flower","flow","flight"};
+    // string arr[4]={"flower","flower","flower","flower"};
+
+    string arr[3]={"c","acc","ccc"};
+    vector<string> ivec(arr, arr + 3 );
+    cout << longestCommonPrefix(ivec) << endl;
 }
