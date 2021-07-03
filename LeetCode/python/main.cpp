@@ -1,8 +1,20 @@
 #include <iostream>
 
 #include <vector>
+#include <stack>
+#include <queue>
 
 using namespace std;
+
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
 
 //[1]两数之和
 // vector<int> twoSum(vector<int> &nums, int target)
@@ -203,6 +215,226 @@ string longestCommonPrefix(vector<string> &strs)
     return commonStr;
 }
 
+//[58]
+int lengthOfLastWord(string s)
+{
+    string word = "", temp = "";
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == ' ')
+        {
+            temp = "";
+        }
+        else
+        {
+            temp = temp + s[i];
+            word = temp;
+        }
+    }
+
+    return word.length();
+}
+
+//[66] 加一
+vector<int> plusOne(vector<int> &digits)
+{
+    vector<int> numN;
+    int count = 0;
+    for (int i = digits.size() - 1; i >= 0; i--)
+    {
+        int plusT = digits[i] + 1;
+        if (plusT == 10)
+        {
+            digits[i] = 0;
+        }
+        else
+        {
+            count = i;
+            digits[i] = plusT;
+            break;
+        }
+    }
+
+    if (digits[0] == 0)
+    {
+        numN.push_back(1);
+        for (int i = 0; i < digits.size(); i++)
+        {
+            numN.push_back(digits[i]);
+        }
+        return numN;
+    }
+    else
+    {
+        return digits;
+    }
+}
+
+//[67]
+string addBinary(string a, string b)
+{
+
+    reverse(a.begin(), a.end());
+
+    string response = "";
+    int sizeA = a.length();
+    int sizeB = b.length();
+    int sizeMax = sizeA > sizeB ? sizeA : sizeB;
+    int sizeMin = sizeA > sizeB ? sizeB : sizeA;
+
+    bool plusOne = false;
+    for (int i = 0; i < sizeMax; i++)
+    {
+        if (i < sizeMin)
+        {
+            if (a[sizeA - i - 1] == '0' && b[sizeB - i - 1] == '0')
+            {
+                if (plusOne)
+                {
+                    response = '1' + response;
+                }
+                else
+                {
+                    response = '0' + response;
+                }
+                plusOne = false;
+            }
+            else if (a[sizeA - i - 1] == '1' && b[sizeB - i - 1] == '1')
+            {
+                if (plusOne)
+                {
+                    response = '1' + response;
+                }
+                else
+                {
+                    response = '0' + response;
+                    plusOne = false;
+                }
+                plusOne = true;
+            }
+            else
+            {
+                if (plusOne)
+                {
+                    response = '0' + response;
+                    plusOne = true;
+                }
+                else
+                {
+                    response = '1' + response;
+                    plusOne = false;
+                }
+            }
+        }
+        else
+        {
+            if (sizeA > sizeB)
+            {
+                if (a[sizeA - i - 1] == '0')
+                {
+                    char temp = plusOne ? '1' : '0';
+                    response = temp + response;
+                    plusOne = false;
+                }
+                else
+                {
+                    char temp = plusOne ? '0' : '1';
+                    response = temp + response;
+                    plusOne = plusOne ? true : false;
+                }
+            }
+            else
+            {
+                if (b[sizeB - i - 1] == '0')
+                {
+                    char temp = plusOne ? '1' : '0';
+                    response = temp + response;
+                    plusOne = false;
+                }
+                else
+                {
+                    char temp = plusOne ? '0' : '1';
+                    response = temp + response;
+                    plusOne = plusOne ? true : false;
+                }
+            }
+        }
+    }
+    if (plusOne)
+    {
+        response = '1' + response;
+    }
+
+    return response;
+}
+
+//[94] 左中右
+vector<int> inorderTraversal(TreeNode *root)
+{
+    vector<int> res;
+    TreeNode *currNode = root;
+    stack<TreeNode *> stackN;
+    while (!stackN.empty() || currNode)
+    {
+        while (currNode)
+        {
+            stackN.push(currNode);
+            currNode = currNode->left;
+        }
+        
+       TreeNode *node = stackN.top();
+       stackN.pop();
+       res.push_back(node->val);
+       currNode = node->right;
+    }
+
+    return res; 
+}
+
+bool isSameTree(TreeNode *p, TreeNode *q)
+{
+    if(p==nullptr && q==nullptr) {
+        return true; 
+    } else if(p==nullptr || q==nullptr){
+        return false;
+    }
+
+
+    queue<TreeNode *> v1, v2;
+    v1.push(p);
+    v2.push(q);
+
+    while (v1.size() > 0 || v2.size() > 0)
+    {
+        int size = v1.size();
+        if(size != v2.size()) return false;
+
+        for(int i=0; i<size;i++){
+            TreeNode *node1 = v1.front();
+            TreeNode *node2 = v2.front();
+            v1.pop();
+            v2.pop();
+            if(node1->val != node2->val) return false;
+            if(node1->left && node2->left) {
+                v1.push(node1->left);
+                v2.push(node2->left);
+            }else if(node1->left || node2->left){
+                return false;
+            }
+            
+             if(node1->right && node2->right) {
+                v1.push(node1->right);
+                v2.push(node2->right);
+            }else if(node1->right || node2->right){
+                return false;
+            }
+
+        } 
+    }
+
+    return true;
+}
+
 int main()
 {
     //[9]
@@ -223,7 +455,78 @@ int main()
     // string arr[3]={"flower","flow","flight"};
     // string arr[4]={"flower","flower","flower","flower"};
 
-    string arr[3]={"c","acc","ccc"};
-    vector<string> ivec(arr, arr + 3 );
-    cout << longestCommonPrefix(ivec) << endl;
+    // string arr[3] = {"c", "acc", "ccc"};
+    // vector<string> ivec(arr, arr + 3);
+    // cout << longestCommonPrefix(ivec) << endl;
+
+    // string arr[3] = {"c", "acc", "ccc"};
+    // vector<string> ivec(arr, arr + 3);
+    // cout << longestCommonPrefix(ivec) << endl;
+
+    //58
+    // cout << lengthOfLastWord("Hello World") << endl;
+    // cout << lengthOfLastWord(" ") << endl;
+    // cout << lengthOfLastWord("hi") << endl;
+    // cout << lengthOfLastWord("a ") << endl;
+
+    //66
+    // int arr[3] = {1,2,3};
+    // vector<int> ivec(arr, arr+3);
+    // plusOne(ivec);
+
+    // int arr2[1] = {0};
+    // vector<int> ivec2(arr2, arr2+1);
+    // plusOne(ivec2);
+
+    // int arr3[2] = {9, 9};
+    // vector<int> ivec3(arr3, arr3 + 2);
+    // plusOne(ivec3);
+
+    //67
+    // int arr[3] = {1,2,3};
+    // cout << addBinary("11", "1") << endl;
+    // cout << addBinary("1010", "1011") << endl;
+    // cout << addBinary("0", "0") << endl;
+    // cout << addBinary("1", "0") << endl;
+    // cout << addBinary("1", "1") << endl;
+    // cout << addBinary("1", "1111") << endl;
+
+    //94
+    // TreeNode *node7 = new TreeNode(7);
+    // TreeNode *node6 = new TreeNode(6);
+    // TreeNode *node5 = new TreeNode(5);
+    // TreeNode *node4 = new TreeNode(4);
+    // TreeNode *node3 = new TreeNode(3, node6, node7);
+    // TreeNode *node2 = new TreeNode(2, node4, node5);
+    // TreeNode *node1 = new TreeNode(1, node2, node3);
+    // inorderTraversal(node1);
+
+     //[100]
+    //[68,41,null,-85,null,-73,-49,-98,null,null,null,-124] +  [68,41,null,-85,null,-73,-49,-98,null,null,null,-124] 
+    // TreeNode *node1_2 = new TreeNode(1);
+    // TreeNode *node1_3 = new TreeNode(2);
+    // TreeNode *node1_1 = new TreeNode(1, node1_2, node1_3);
+    // TreeNode *node2_2 = new TreeNode(2);
+    // TreeNode *node2_3 = new TreeNode(1);
+    // TreeNode *node2_1 = new TreeNode(1, node2_3, node2_2);
+    // cout << isSameTree(nullptr, nullptr);
+
+    TreeNode *node1_6 = new TreeNode(-124,nullptr,nullptr);
+    TreeNode *node1_5 = new TreeNode(-98, node1_6, nullptr);
+    TreeNode *node1_4 = new TreeNode(-72, node1_5, nullptr);
+    TreeNode *node1_4_2 = new TreeNode(-49, nullptr, nullptr);
+    TreeNode *node1_3 = new TreeNode(85, node1_4, node1_4_2);
+    TreeNode *node1_2 = new TreeNode(41, node1_3, nullptr);
+    TreeNode *node1_1 = new TreeNode(68, node1_2, nullptr);
+
+    TreeNode *node2_6 = new TreeNode(-124,nullptr,nullptr);
+    TreeNode *node2_5 = new TreeNode(-98, node2_6, nullptr);
+    TreeNode *node2_4 = new TreeNode(-72, node2_5, nullptr);
+    TreeNode *node2_4_2 = new TreeNode(-49, nullptr, nullptr);
+    TreeNode *node2_3 = new TreeNode(85, node2_4, node2_4_2);
+    TreeNode *node2_2 = new TreeNode(41, node2_3, nullptr);
+    TreeNode *node2_1 = new TreeNode(68, node2_2, nullptr);
+    
+    cout << isSameTree(node1_1, node2_1);
+
 }
