@@ -6,6 +6,18 @@
         "iostream": "cpp",
         "vector": "cpp",
         "iterator": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "__split_buffer": "cpp",
+        "limits": "cpp",
+        "functional": "cpp",
+        "algorithm": "cpp",
+        "__node_handle": "cpp",
+        "stack": "cpp",
+        "deque": "cpp",
+        "__nullptr": "cpp",
+        "queue": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     }
 }
